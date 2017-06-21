@@ -1,0 +1,47 @@
+select	从数据库表中获取数据
+update	更新数据库表中的数据
+delete	从数据库表中删除数据
+insert into	想数据库表中插入数据
+
+create database		创建新数据库
+alter database		修改数据库
+create table		创建新表
+alter table		变更（改变）数据库表
+drop table		删除表
+create index		创建索引（搜索键）
+drop index		删除索引
+
+
+select 列名称 from 表名称；
+
+select distinct 列名称 from 表名称 	关键词 DISTINCT 用于返回唯一不同的值
+
+select 列名称 from 表名称 where 列 运算符 值	
+SQL 使用单引号来环绕文本值（大部分数据库系统也接受双引号）。如果是数值，请不要使用引号
+SELECT * FROM Persons WHERE City='Beijing'
+SELECT * FROM Persons WHERE Year>1965
+
+AND 和 OR 可在 WHERE 子语句中把两个或多个条件结合起来。
+如果第一个条件和第二个条件都成立，则 AND 运算符显示一条记录。
+如果第一个条件和第二个条件中只要有一个成立，则 OR 运算符显示一条记录。
+SELECT * FROM Persons WHERE FirstName='Thomas' AND LastName='Carter'
+SELECT * FROM Persons WHERE firstname='Thomas' OR lastname='Carter'
+SELECT * FROM Persons WHERE (FirstName='Thomas' OR FirstName='William')
+AND LastName='Carter'
+
+ORDER BY 语句用于根据指定的列对结果集进行排序。
+ORDER BY 语句默认按照升序对记录进行排序。
+如果您希望按照降序对记录进行排序，可以使用 DESC 关键字
+SELECT Company, OrderNumber FROM Orders ORDER BY Company
+SELECT Company, OrderNumber FROM Orders ORDER BY Company DESC
+
+insert into 表名称 values （值1，值2，…）
+INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)
+
+update 表名称 set 列名称 = 新值 where 列名称 = 某值
+
+delete from 表名称 where 列名称 = 值	DELETE 语句用于删除表中的行
+
+可以在不删除表的情况下删除所有的行。这意味着表的结构、属性和索引都是完整的
+DELETE FROM table_name
+DELETE * FROM table_name
